@@ -1,12 +1,24 @@
 import React, { Component } from "react";
 
-export default class Carrinho extends Component {
+
+
+
+class Carrinho extends React.Component {
+  state = {
+    compras: []
+  }
+mandaParaCarrinho = () => {
+
+}
+  
+
+
   render() {
     return (
-      <>
-        <h1>olá,eu sou um carrinho</h1>
-      </>
+      <div>
+        <button onClick={this.mandaParaCarrinho}>Comprar</button>
+      </div>
     );
   }
 }
-
+export default Carrinho;
