@@ -1,4 +1,19 @@
-*{
-    margin: auto;
+* {
+    margin: 0;
 }
+.container-principal {
+    text-align: center;
+    padding: 2vw;
+}
+
+.container-produtos{    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2vw;
+    
+    
+
+}
+   
 
