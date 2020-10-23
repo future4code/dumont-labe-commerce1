@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import { Products } from './Products';
 
 const CardContainer = styled.div`
 border: 1px solid red;
@@ -24,11 +25,12 @@ const AddToCartButton = styled.button`
 
 export class ProductCard extends React.Component {
     render() {
+        const product = this.props.product
         return <CardContainer>
-            <img src={"https://picsum.photos/100/150?random=1"}/>
+            <img src={product.imagem}/>
             <CardInfo>
-                <p>Produto</p>
-                <p>Preço: R$50</p>
+                <p>{product.nome}</p>
+                <p>{product.preco}</p>
                 <AddToCartButton>Adicionar ao Carrinho</AddToCartButton>
             </CardInfo>
         </CardContainer>

@@ -19,19 +19,28 @@ export class Filters extends React.Component {
       
         <InputContainer>
           Valor mínimo:
-          <input type="number"/>
+          <input
+           type="number"
+           value={this.props.filtroMinimo}
+           />
         </InputContainer>
       
       
         <InputContainer>
           Valor máximo:
-          <input type="number"/>
+          <input
+           type="number"
+           value={this.props.filtroMaximo}
+           />
         </InputContainer>
       
       
         <InputContainer>
           Buscar por nome:
-          <input type="text"/>
+          <input
+           type="text"
+           value={this.props.nomeFiltro}
+           />
         </InputContainer>
       
       </FiltersContainer>
