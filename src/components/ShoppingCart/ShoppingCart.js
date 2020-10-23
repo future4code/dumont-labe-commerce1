@@ -19,13 +19,12 @@ export class ShoppingCart extends React.Component {
       <h3>Carrinho: </h3>
       
       <CartListContainer>
-        <ShoppingCartItem />
-        <ShoppingCartItem />
-        <ShoppingCartItem />
-        <ShoppingCartItem />
-        <p>Valor Total: R$ 100</p>
+        {this.props.productsInCart.map((product)=>{
+            return <ShoppingCartItem cartItem={product}/>
+        })}
+        
       </CartListContainer>
-     
+      <p>Valor Total: R$ 100</p>
     </ShoppingCartContainer>
   }
 }
