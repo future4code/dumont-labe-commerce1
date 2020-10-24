@@ -26,7 +26,6 @@ export class Products extends React.Component {
   }
 
 
-
   getFilteredAndOrderedList = () =>{
     return this.props.products
         .filter((product) =>product.preco < this.props.filtroMaximo) 
@@ -34,6 +33,11 @@ export class Products extends React.Component {
         .filter((product) =>product.nome.includes(this.props.nomeFiltro)) 
         .sort((a,b)=>this.state.sort === "crescente" ? a.preco  -  b.preco : b.preco - a.preco) 
   }
+
+  onChangeSort =(event) => {
+    this.setState({sort: event.target.value})
+  }
+
   render(){
     const filteredAndOrderedList = this.getFilteredAndOrderedList()
     return <ProductsContainer>
@@ -41,7 +45,7 @@ export class Products extends React.Component {
       <p>Quantidade de Produtos: {filteredAndOrderedList.length}</p>
         <label>
           Ordem:
-          <select value={this.state.sort}>
+          <select value={this.state.sort} onChange={this.onChangeSort}>
             <option value={"crescente"}>Crescente</option>
             <option value={"decrescente"}>Decrescente</option>
           </select>

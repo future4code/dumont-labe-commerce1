@@ -19,7 +19,7 @@ export class ShoppingCart extends React.Component {
     let totalValue = 0
 
     for(let product of this.props.productsInCart){
-      totalValue = totalValue + product.preco*product.quantidade
+      totalValue = totalValue + product.preco * product.quantidade
     }
     return totalValue
   }
@@ -30,7 +30,7 @@ export class ShoppingCart extends React.Component {
       
       <CartListContainer>
         {this.props.productsInCart.map((product)=>{
-            return <ShoppingCartItem cartItem={product}/>
+            return <ShoppingCartItem cartItem={product} onRemoveProductFromCart={this.props.onRemoveProductFromCart}/>
         })}
         
       </CartListContainer>
