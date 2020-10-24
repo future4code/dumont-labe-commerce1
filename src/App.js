@@ -3,16 +3,29 @@ import { Filters } from './components/Filters/Filters';
 import { Products } from './components/Products/Products';
 import { ShoppingCart } from './components/ShoppingCart/ShoppingCart';
 import styled from 'styled-components';
-import Foto1 from './img/Foto1.jpg';
-import Foto2 from "./img/Foto2.jpg";
-import Foto3 from "./img/Foto3.jpg";
-import Foto4 from "./img/Foto4.jpg";
+import Foto1 from './img/Foto1.png';
+import Foto2 from "./img/Foto2.png";
+import Foto3 from "./img/Foto3.png";
+import Foto4 from "./img/Foto4.png";
+import Foto5 from "./img/Foto5.png";
+import Foto6 from "./img/Foto6.png";
+import Foto7 from "./img/Foto7.png";
+import Foto8 from "./img/Foto8.png";
+import Foto9 from "./img/Foto9.png";
+import Foto10 from "./img/Foto10.png";
+import Foto11 from "./img/Foto11.png";
+import Foto12 from "./img/Foto12.png";
+
 
 const AppContainer = styled.div`
 display: grid;
 grid-template-columns: 1fr 3fr 1fr;
 padding: 16px;
-gap: 10px;
+gap: 12px;
+font-family: 'Grandstander', cursive;
+font-size: 1.2em;
+font-weight: bolder;
+color: #1E3E59;
 `
 
 
@@ -20,32 +33,87 @@ const products = [
 
   {
     id: 1,
-    nome:"Camisa Gatos no espaço",
+    nome:"Camisa1",
     preco: 20.0,
     imagem: Foto1
   },
 
   {
     id: 2,
-    nome:"Camisa Triângulos",
+    nome:"Camisa2",
     preco: 50.0,
     imagem: Foto2
   },
 
   {
     id: 3,
-    nome:"Camisa Nasa",
+    nome:"Camisa3",
     preco: 85.0,
     imagem: Foto3
   },
 
   {
     id: 4,
-    nome:"Camisa Objetos Viajantes",
+    nome:"Camisa4",
     preco: 90.0,
     imagem: Foto4
-  }
+  },
 
+  {
+    id: 5,
+    nome: "Camisa5",
+    preco:  80.0,
+    imagem: Foto5
+  },
+
+  {
+    id: 6,
+    nome: "Camisa6",
+    preco: 90.00,
+    imagem: Foto6
+  },
+
+  {
+    id: 7,
+    nome: "Camisa7",
+    preco: 75.00,
+    imagem: Foto7
+  },
+
+  {
+    id: 8,
+    nome: "Camisa8",
+    preco:  80.0,
+    imagem: Foto8
+  },
+
+  {
+    id: 9,
+    nome: "Camisa9",
+    preco:  85.0,
+    imagem: Foto9
+  },
+
+  {
+    id: 10,
+    nome: "Camisa10",
+    preco:  69.0,
+    imagem: Foto10
+  },
+
+  {
+    id: 11,
+    nome: "Camisa11",
+    preco:  80.0,
+    imagem: Foto11
+  },
+
+  {
+    id: 12,
+    nome: "Camisa12",
+    preco:  90.0,
+    imagem: Foto12
+  }
 
 
 ]
@@ -59,19 +127,11 @@ class App extends React.Component {
    productsInCart: [
 
      {
-       id: 5,
-       nome: "Produto5",
-       preco: 100,
-       imagem: "https://picsum.photos/200/300?random=1",
-       quantidade: 1
+      
      },
 
      {
-      id: 6,
-      nome: "Produto6",
-      preco: 200,
-      imagem: "https://picsum.photos/200/300?random=2",
-      quantidade: 3
+     
     }
    ] 
   }

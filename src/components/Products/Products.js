@@ -3,7 +3,8 @@ import { ProductCard } from './ProductCard'
 import styled from 'styled-components';
 
 const ProductsContainer = styled.div`
-border: 1px solid blue;
+border: 2px dotted blue;
+background-color: #BFBFBF;
 `;
 
 const ProductsHeader = styled.div`

@@ -1,5 +1,4 @@
 import React from 'react'
-import { ShoppingCart } from './ShoppingCart'
 import styled from 'styled-components';
 
 const ItemContainer = styled.div`
