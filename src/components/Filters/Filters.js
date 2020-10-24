@@ -22,6 +22,7 @@ export class Filters extends React.Component {
           <input
            type="number"
            value={this.props.filtroMinimo}
+           onChange={this.props.onChangeFiltroMinimo}
            />
         </InputContainer>
       
@@ -31,6 +32,7 @@ export class Filters extends React.Component {
           <input
            type="number"
            value={this.props.filtroMaximo}
+           onChange={this.props.onChangeFiltroMaximo}
            />
         </InputContainer>
       
@@ -40,6 +42,7 @@ export class Filters extends React.Component {
           <input
            type="text"
            value={this.props.nomeFiltro}
+           onChange={this.props.onChangeNomeFiltro}
            />
         </InputContainer>
       
