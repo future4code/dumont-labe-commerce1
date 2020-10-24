@@ -15,6 +15,7 @@ padding: 16px;
 gap: 10px;
 `
 
+
 const products = [
 
   {
@@ -52,12 +53,14 @@ const products = [
 class App extends React.Component {
    state ={
    filtroMinimo: 0,
-   filtroMaximo: 90,
+   filtroMaximo: 200,
    nomeFiltro: "",
+   
    productsInCart: [
+
      {
        id: 5,
-       nome: "ahsuaha",
+       nome: "Produto5",
        preco: 100,
        imagem: "https://picsum.photos/200/300?random=1",
        quantidade: 1
@@ -65,13 +68,50 @@ class App extends React.Component {
 
      {
       id: 6,
-      nome: "ahsuaha",
+      nome: "Produto6",
       preco: 200,
       imagem: "https://picsum.photos/200/300?random=2",
       quantidade: 3
     }
    ] 
   }
+
+  
+onChangeFiltroMinimo=(event)=>{
+  this.setState({filtroMinimo: event.target.value})
+}
+
+onChangeFiltroMaximo=(event)=>{
+  this.setState({filtroMaximo: event.target.value})
+}
+
+onChangeNomeFiltro=(event)=>{
+  this.setState({nomeFiltro: event.target.value})
+}
+
+onAddProductToCart=(productId)=>{
+  const productInCart = this.state.productsInCart.find(product=> productId === product.id)
+
+  if(productInCart){
+    const newProductsInCart = this.state.productsInCart.map(product => {
+      if(productId === product.id) {
+        return {
+          ...product,
+          quantidade: product.quantidade + 1
+        }
+      }
+      return product
+    })
+    this.setState({productsInCart: newProductsInCart})
+    }else{
+      const productToAdd = products.find(product => productId === product.id)
+
+      const newProductsInCart = [...this.state.productsInCart, {...productToAdd, quantidade: 1}]
+
+      this.setState ({productsInCart: newProductsInCart})
+
+    }
+}
   render(){
   return (
     <AppContainer>
@@ -79,12 +119,16 @@ class App extends React.Component {
       filtroMinimo={this.state.filtroMinimo}
       filtroMaximo={this.state.filtroMaximo}
       nomeFiltro={this.state.nomeFiltro}
+      onChangeFiltroMinimo= {this.onChangeFiltroMinimo}
+      onChangeFiltroMaximo={this.onChangeFiltroMaximo}
+      onChangeNomeFiltro= {this.onChangeNomeFiltro}
       />
       <Products 
       products={products}
       filtroMinimo={this.state.filtroMinimo}
       filtroMaximo={this.state.filtroMaximo}
       nomeFiltro={this.state.nomeFiltro}
+      onAddProductToCart={this.onAddProductToCart}
       />
       <ShoppingCart
       productsInCart={this.state.productsInCart}

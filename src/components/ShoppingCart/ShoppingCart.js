@@ -14,6 +14,16 @@ gap: 4px;
 `
 
 export class ShoppingCart extends React.Component {
+
+  getTotalValue =()=>{
+    let totalValue = 0
+
+    for(let product of this.props.productsInCart){
+      totalValue = totalValue + product.preco*product.quantidade
+    }
+    return totalValue
+  }
+  
   render(){
     return <ShoppingCartContainer>
       <h3>Carrinho: </h3>
@@ -24,7 +34,7 @@ export class ShoppingCart extends React.Component {
         })}
         
       </CartListContainer>
-      <p>Valor Total: R$ 100</p>
+      <p>Valor Total: R${this.getTotalValue()}</p>
     </ShoppingCartContainer>
   }
 }
