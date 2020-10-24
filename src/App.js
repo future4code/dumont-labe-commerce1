@@ -89,7 +89,7 @@ onChangeNomeFiltro=(event)=>{
   this.setState({nomeFiltro: event.target.value})
 }
 
-onAddProductToCart=(productId)=>{
+onAddProductToCart=(productId) => {
   const productInCart = this.state.productsInCart.find(product=> productId === product.id)
 
   if(productInCart){
@@ -112,6 +112,21 @@ onAddProductToCart=(productId)=>{
 
     }
 }
+
+onRemoveProductFromCart=(productId) => {
+  const newProductsInCart = this.state.productsInCart.map((product) => {
+    if(product.id === productId) {
+      return {
+        ...product,
+        quantidade: product.quantidade - 1
+      }
+    }
+    return product
+  }).filter((product) => product.quantidade > 0)
+
+  this.setState({productsInCart: newProductsInCart})
+}
+
   render(){
   return (
     <AppContainer>
@@ -132,6 +147,7 @@ onAddProductToCart=(productId)=>{
       />
       <ShoppingCart
       productsInCart={this.state.productsInCart}
+      onRemoveProductFromCart={this.onRemoveProductFromCart}
       
       
       />

@@ -31,7 +31,8 @@ export class ProductCard extends React.Component {
             <CardInfo>
                 <p>{product.nome}</p>
                 <p>{product.preco}</p>
-                <AddToCartButton>Adicionar ao Carrinho</AddToCartButton>
+                <AddToCartButton onClick={() => this.props.onAddProductToCart(product.id)}>Adicionar ao Carrinho
+                </AddToCartButton>
             </CardInfo>
         </CardContainer>
     }
