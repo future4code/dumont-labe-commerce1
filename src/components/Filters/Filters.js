@@ -2,8 +2,9 @@ import React from 'react'
 import styled from 'styled-components';
 
 const FiltersContainer = styled.div`
-border: 1px solid black;
+border: 2px dotted black;
 padding: 10px;
+background-color: #F2F2F2;
 `;
 const InputContainer = styled.label`
 display: flex;
